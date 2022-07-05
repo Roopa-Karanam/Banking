@@ -9,41 +9,30 @@ get_balance()	A method which returns the account balance
 deposit(amount)	A method which creates a deposit transaction
 withdraw(amount)	A method which creates a withdrawal transaction
     """
-    transactions=''
+    transactions=[]
+    def __init__(self):
+        self.transactions = []
     
-    def __init__(self, first_name, last_name):
-        self.balance=0
-
-    def __str__(self):
-         """Returns the full name."""
-         return self.get_transactions()  
-
-    def __repr__(self):
-        """Returns an expression which can be used to recreate this object."""  
-        return self.get_transactions()
-
-    '''def get_transactions(self):
-        """Returns the full name."""
-        
-    
-    def get_balance(self):
-        return get_transactions()
-    
+  
     def deposit(self,amount):        
         y=abs(amount)        
         x=Transaction(y)
+        self.transactions.append(x)
        # return self.transactions+=x
     def withdraw(self, amount):
         y= abs(amount)
         y=y*-1
         x=Transaction(y)
+        self.transactions.append(x)
         #return self.transactions+=x
+    def get_balance(self):
+        bal=0
+        for i in range (0,len(self.transactions)):
+            bal=+self.transactions[i]
+        return bal
         
-        '''
-      
+        
     
-
-
 class Transaction():
     def __init__(self, amount, timestamp=None):
         """
@@ -51,10 +40,11 @@ class Transaction():
         """
         self.amount = amount
         self.timestamp=datetime.datetime.now()
+        
 
 
     def __repr__(self):
-       return 'Account(time: ={}, amount={})'.format(
+       return 'Transaction(time: ={}, amount={})'.format(
             repr(self.amount),
             repr(self.timestamp),
             
@@ -66,3 +56,4 @@ class Transaction():
                  repr(self.timestamp),
                  
              )
+
