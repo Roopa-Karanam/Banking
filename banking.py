@@ -25,13 +25,21 @@ class Account:
         self.transactions.append(x_amount)
         #return self.transactions+=x
     def get_balance(self):
-        '''get balance method'''
+        '''
+        get balance method
+
+        Returns
+        -------
+        bal : TYPE
+            DESCRIPTION.
+
+        '''
         bal=0
         for transaction in self.transactions:
             bal = +transaction.amount
         return bal
 class Transaction():
-    '''Transaction class'''
+    """Transaction class"""
     def __init__(self, amount, timestamp=None):
         """
        init method
