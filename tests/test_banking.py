@@ -25,14 +25,14 @@ def test_transaaction_timestamp():
     transaction = Transaction(100)
     assert transaction.timestamp == datetime.now()
 def test_deposit():
-    '''
+    """
     testing deposit
 
     Returns
     -------
     None.
 
-    '''
+    """
     test_account=Account()
     test_account.deposit(100)
     test_account.deposit(200)
