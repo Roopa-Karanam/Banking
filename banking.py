@@ -27,8 +27,8 @@ class Account:
     def get_balance(self):
         '''get balance method'''
         bal=0
-        for i in range (0,len(self.transactions)):
-            bal=+self.transactions[i].amount
+        for transaction in self.transactions:
+            bal = +transaction.amount
         return bal
 class Transaction():
     '''Transaction class'''
